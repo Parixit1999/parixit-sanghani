@@ -1,0 +1,42 @@
+.header {
+    background-color: #eaeaea;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-profile-pic {
+    flex: 1;
+    margin-right: 10px;
+    height: 7rem;
+    width: 7rem;
+}
+
+.header-button {
+    background: 
+        linear-gradient(#282c34, #282c34) padding-box,
+        linear-gradient(90deg, #61dafb, #21a1f1, #61dafb) border-box;
+    border: 2px solid #eaeaea;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px black;
+}
+
+.header-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-button:hover {
+    background-color: #21a1f1;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.header-button:active  {
+    background-color: #1a8cd8;
+    transform: translateY(0px);
+  }
