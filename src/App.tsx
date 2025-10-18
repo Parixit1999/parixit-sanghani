@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Portfolio from './components/Portfolio/Portfolio';
+import Header from './components/header/Header';
+import Profile from './components/profile/Profile';
 
 function App() {
   return (
@@ -12,11 +11,8 @@ function App() {
         <Header />
       </header>
       <div className="App">
-        <Portfolio></Portfolio>
+        <Profile />
       </div>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

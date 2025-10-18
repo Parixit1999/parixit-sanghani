@@ -1,0 +1,22 @@
+.experience-more {
+    margin-top: 0.75rem;
+}
+
+.experience-toggle {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.experience-toggle:hover,
+.experience-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.details {
+    white-space: pre-line;
+    text-align: justify;
+}
