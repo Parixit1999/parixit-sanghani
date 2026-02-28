@@ -19,14 +19,6 @@ const PROJECTS: Project[] = [
         skills: ['OCR', 'GenAI', 'Python', 'SQL', 'REST API'],
     },
     {
-        title: 'Realizing Efficient HPC Storage in Kubernetes',
-        timeline: 'Jan 2024 - May 2024',
-        associatedWith: 'Rochester Institute of Technology',
-        impact:
-            'Built during my master\'s as a self-directed project for learning and curiosity, transforming Lustre into a Kubernetes microservice to simplify deployment and improve cloud scalability.',
-        skills: ['Kubernetes', 'Go', 'Lustre File System'],
-    },
-    {
         title: 'Telemetry & Data Pipeline Automation',
         timeline: '2024',
         associatedWith: 'Independent Project',
@@ -41,6 +33,15 @@ const PROJECTS: Project[] = [
         impact:
             'Benchmarked VGG, ResNet, and SimCLR and confirmed cosine similarity as the most reliable retrieval metric.',
         skills: ['Machine Learning', 'Computer Vision', 'Neural Networks', 'Python'],
+    },
+
+    {
+        title: 'Realizing Efficient HPC Storage in Kubernetes',
+        timeline: 'Jan 2024 - May 2024',
+        associatedWith: 'Rochester Institute of Technology',
+        impact:
+            'Transformed Lustre into a Kubernetes microservice to simplify deployment and improve cloud scalability.',
+        skills: ['Kubernetes', 'Go', 'Lustre File System'],
     },
     {
         title: 'Pneumonia Prediction and Detection',
