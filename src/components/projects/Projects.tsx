@@ -11,6 +11,30 @@ type Project = {
 
 const PROJECTS: Project[] = [
     {
+        title: 'Intelligent Document Extraction',
+        timeline: '2025',
+        associatedWith: 'Independent Project',
+        impact:
+            'Designed an end-to-end OCR + GenAI pipeline to parse unstructured PDFs, normalize extracted insights into SQL records, and deliver real-time data to frontend applications through robust API integrations.',
+        skills: ['OCR', 'GenAI', 'Python', 'SQL', 'REST API'],
+    },
+    {
+        title: 'Realizing Efficient HPC Storage in Kubernetes',
+        timeline: 'Jan 2024 - May 2024',
+        associatedWith: 'Rochester Institute of Technology',
+        impact:
+            'Built during my master\'s as a self-directed project for learning and curiosity, transforming Lustre into a Kubernetes microservice to simplify deployment and improve cloud scalability.',
+        skills: ['Kubernetes', 'Go', 'Lustre File System'],
+    },
+    {
+        title: 'Telemetry & Data Pipeline Automation',
+        timeline: '2024',
+        associatedWith: 'Independent Project',
+        impact:
+            'Implemented Python microservices backed by Kafka to stream and visualize Kubernetes pod metrics, improving observability and end-to-end ML pipeline traceability.',
+        skills: ['Python', 'Kafka', 'Kubernetes', 'Microservices', 'Observability'],
+    },
+    {
         title: 'Image Similarity using Neural Network',
         timeline: 'May 2024 - Aug 2024',
         associatedWith: 'Rochester Institute of Technology',
