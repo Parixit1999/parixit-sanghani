@@ -1,6 +1,21 @@
+:root {
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --surface: #ffffff;
+  --surface-soft: #f8fbff;
+  --border: #dbe5f1;
+  --accent: #0f766e;
+  --accent-soft: #e0f2f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

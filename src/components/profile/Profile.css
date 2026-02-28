@@ -1,3 +1,56 @@
 .profile {
-    padding: 5% 10%;
+    padding: 1.25rem 1rem;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+    gap: 1.1rem;
+    align-items: start;
+}
+
+.profile-main,
+.profile-side {
+    display: grid;
+    gap: 1.1rem;
+}
+
+.profile-section {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.section-title {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.projects-full-width {
+    margin-top: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        padding: 0.9rem;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-section {
+        padding: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
 }

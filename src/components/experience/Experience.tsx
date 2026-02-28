@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Experience.css';
 
 type ExperienceProps = {
@@ -10,18 +10,33 @@ type ExperienceProps = {
 };
 
 const Experience: React.FC<ExperienceProps> = ({ company, position, year, location, details }: ExperienceProps) => {
-
+    const detailLines: string[] = details
+        .split('\n')
+        .map((line: string) => line.trim())
+        .filter(Boolean);
+    const hasMultipleLines: boolean = detailLines.length > 1;
 
     return (
-        <div>
+        <article className="experience-card">
             <div className="experience-section">
-                <h2 className="company-name">{company} - {position}</h2>
+                <h2 className="company-name">{company}</h2>
+                <p className="role-name">{position}</p>
                 <p className="year-location">{year} | {location}</p>
             </div>
             <div>
-                <p className="details">{details}</p>
+                {hasMultipleLines ? (
+                    <ul className="details-list">
+                        {detailLines.map((line: string, index: number) => (
+                            <li key={`${company}-${position}-${index}`} className="details-list-item">
+                                {line.replace(/^-+\s*/, '')}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="details">{details}</p>
+                )}
             </div>
-        </div>
+        </article>
         
     );
 };

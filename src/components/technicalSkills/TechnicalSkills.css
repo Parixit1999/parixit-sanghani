@@ -1,0 +1,31 @@
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+}
+
+.skills-card {
+    border: 1px solid #d9dce3;
+    border-radius: 10px;
+    background-color: #fcfcfd;
+    padding: 0.9rem;
+}
+
+.skills-category {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.skill-pill {
+    border-radius: 999px;
+    background-color: #f2f4f8;
+    border: 1px solid #d4d8e1;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.82rem;
+}

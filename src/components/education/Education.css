@@ -1,4 +1,34 @@
-.school-name-ref{
+.education-section {
+    padding: 0.2rem 0;
+}
+
+.education-section + .education-section {
+    border-top: 1px solid var(--border);
+    margin-top: 0.75rem;
+    padding-top: 0.95rem;
+}
+
+.school-name {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+}
+
+.school-name-ref {
     text-decoration: none;
-    color: inherit;
+    color: var(--text-primary);
+}
+
+.school-name-ref:hover {
+    text-decoration: underline;
+}
+
+.degree {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.education-section .year-location {
+    margin: 0.18rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
 }

@@ -1,0 +1,24 @@
+.interests-container {
+    border: 1px solid #d9dce3;
+    border-radius: 10px;
+    background-color: #fcfcfd;
+    padding: 1rem;
+}
+
+.interests-intro {
+    margin: 0 0 0.75rem;
+}
+
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.interest-pill {
+    border-radius: 999px;
+    background-color: #edf7ef;
+    color: #1f5132;
+    padding: 0.28rem 0.68rem;
+    font-size: 0.83rem;
+}
