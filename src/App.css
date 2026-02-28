@@ -10,3 +10,10 @@
   color: var(--text-primary);
   padding-bottom: 2.5rem;
 }
+
+.site-footer {
+  padding: 0.9rem 1rem 1.35rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}

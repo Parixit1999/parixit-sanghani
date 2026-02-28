@@ -14,6 +14,10 @@ const CREST_DATA_SYSTEMS = "- Delivered full-stack log ingestion and ETL pipelin
 const CREST_DATA_SYSTEMS_INTERN = "- Built Sophos-Kaseya integration features for cloud-based monitoring workflows.\n- Contributed to internal HRMS product development with React, GraphQL, FastAPI, and Python.\n- Supported end-to-end implementation, testing, and delivery across frontend and backend layers."
 
 const Profile: React.FC = () => {
+    const handleBackToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <div className="profile">
             <div className="profile-layout">
@@ -51,6 +55,11 @@ const Profile: React.FC = () => {
                 <h2 className="section-title">Projects</h2>
                 <Projects />
             </section>
+            <div className="back-to-top-wrap">
+                <button type="button" className="back-to-top-button" onClick={handleBackToTop}>
+                    Back to Top
+                </button>
+            </div>
         </div>
     );
 };

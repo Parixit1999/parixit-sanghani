@@ -48,3 +48,12 @@ src/
 - `npm start` - Run the app locally
 - `npm test` - Run tests
 - `npm run build` - Build for production
+
+## License
+
+The source code in this repository is licensed under the MIT License.
+See [LICENSE](./LICENSE) for details.
+
+Portfolio content (including personal biography text, project descriptions,
+branding, and media assets) is © Parixit Sanghani and remains all rights reserved
+unless explicitly stated otherwise.

@@ -10,6 +10,9 @@ function App() {
       <div className="App">
         <Profile />
       </div>
+      <footer className="site-footer">
+        © {new Date().getFullYear()} Parixit Sanghani. All rights reserved.
+      </footer>
     </div>
   );
 }
