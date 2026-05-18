@@ -7,6 +7,8 @@
 
 .interests-intro {
     margin: 0 0 0.75rem;
+    font-size: 0.94rem;
+    color: var(--text-muted);
 }
 
 .interests-list {
@@ -17,8 +19,11 @@
 
 .interest-pill {
     border-radius: 999px;
-    background-color: #edf7ef;
-    color: #1f5132;
-    padding: 0.28rem 0.68rem;
+    background-color: var(--accent-soft);
+    color: #115e59;
+    padding: 0.3rem 0.75rem;
     font-size: 0.83rem;
+    font-weight: 500;
+    border: 1px solid rgba(15, 118, 110, 0.18);
+    white-space: nowrap;
 }

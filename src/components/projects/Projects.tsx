@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import './Projects.css';
 
 type Project = {
@@ -7,6 +8,7 @@ type Project = {
     associatedWith: string;
     impact: string;
     skills: string[];
+    link?: string;
 };
 
 const PROJECTS: Project[] = [
@@ -99,7 +101,16 @@ const Projects: React.FC = () => {
             {PROJECTS.map((project: Project) => (
                 <article key={project.title} className="project-card">
                     <div className="project-header">
-                        <h3 className="project-title">{project.title}</h3>
+                        <h3 className="project-title">
+                            {project.link ? (
+                                <a className="project-title-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                                    {project.title}
+                                    <ExternalLink size={14} aria-hidden="true" />
+                                </a>
+                            ) : (
+                                project.title
+                            )}
+                        </h3>
                         <span className="project-timeline">{project.timeline}</span>
                     </div>
                     <p className="project-associated">{project.associatedWith}</p>
