@@ -38,6 +38,14 @@
     letter-spacing: -0.005em;
     position: relative;
     padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.section-title-icon {
+    color: var(--accent);
+    flex-shrink: 0;
 }
 
 .section-title::after {
@@ -49,6 +57,31 @@
     height: 3px;
     border-radius: 3px;
     background: linear-gradient(90deg, var(--accent) 0%, #60a5fa 100%);
+}
+
+.open-to-roles-copy {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.open-to-roles-list {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.open-to-roles-pill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 118, 110, 0.18);
+    background-color: var(--accent-soft);
+    color: #115e59;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 500;
 }
 
 .projects-full-width {

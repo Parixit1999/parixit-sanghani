@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Sparkles, Code2 } from 'lucide-react';
 import './Projects.css';
 
 type Project = {
@@ -9,6 +9,7 @@ type Project = {
     impact: string;
     skills: string[];
     link?: string;
+    featured?: boolean;
 };
 
 const PROJECTS: Project[] = [
@@ -19,14 +20,16 @@ const PROJECTS: Project[] = [
         impact:
             'Designed an end-to-end OCR + GenAI pipeline to parse unstructured PDFs, normalize extracted insights into SQL records, and deliver real-time data to frontend applications through robust API integrations.',
         skills: ['OCR', 'GenAI', 'Python', 'SQL', 'REST API'],
+        featured: true,
     },
     {
         title: 'Telemetry & Data Pipeline Automation',
         timeline: '2024',
         associatedWith: 'Independent Project',
         impact:
-            'Implemented Python microservices backed by Kafka to stream and visualize Kubernetes pod metrics, improving observability and end-to-end ML pipeline traceability.',
+            'Implemented Python microservices backed by Kafka to reliably stream and visualize Kubernetes pod metrics, significantly improving observability and end-to-end ML pipeline traceability.',
         skills: ['Python', 'Kafka', 'Kubernetes', 'Microservices', 'Observability'],
+        featured: true,
     },
     {
         title: 'Image Similarity using Neural Network',
@@ -36,14 +39,13 @@ const PROJECTS: Project[] = [
             'Benchmarked VGG, ResNet, and SimCLR and confirmed cosine similarity as the most reliable retrieval metric.',
         skills: ['Machine Learning', 'Computer Vision', 'Neural Networks', 'Python'],
     },
-
     {
-        title: 'Realizing Efficient HPC Storage in Kubernetes',
+        title: 'Efficient HPC Storage in Kubernetes',
         timeline: 'Jan 2024 - May 2024',
         associatedWith: 'Rochester Institute of Technology',
         impact:
-            'Transformed Lustre into a Kubernetes microservice to simplify deployment and improve cloud scalability.',
-        skills: ['Kubernetes', 'Go', 'Lustre File System'],
+            'Re-architected the Lustre filesystem into Kubernetes-based microservices with self-healing and pod recovery using Go, improving scalability, availability, and deployment efficiency in cloud environments.',
+        skills: ['Kubernetes', 'Go', 'Lustre', 'Microservices'],
     },
     {
         title: 'Pneumonia Prediction and Detection',
@@ -61,68 +63,56 @@ const PROJECTS: Project[] = [
             'Built multi-class intrusion detection with LSTM/RNN/CNN models and deployed real-time inference via REST API.',
         skills: ['Deep Learning', 'PyTorch', 'NumPy', 'Scikit-Learn', 'REST API'],
     },
-    {
-        title: 'Online Agriculture Trading for Indian Farmers',
-        timeline: 'Aug 2020 - Dec 2020',
-        associatedWith: 'Birla Vishvakarma Mahavidyalaya',
-        impact:
-            'Built web/mobile marketplace connecting farmers directly to buyers with messaging, caching, and AWS-based deployment.',
-        skills: ['Node.js', 'Vue.js', 'MongoDB', 'RabbitMQ', 'Redis', 'AWS', 'Nginx'],
-    },
-    {
-        title: 'Stock Market Simulation Game',
-        timeline: 'May 2019',
-        associatedWith: 'Birla Vishvakarma Mahavidyalaya',
-        impact:
-            'Led a stock-market simulation used by 2,000+ students with scalable AWS hosting and live participant notifications.',
-        skills: ['Python', 'Flask', 'AngularJS', 'AWS', 'RabbitMQ'],
-    },
-    {
-        title: 'Fingerprint Recognition Using Deep Learning',
-        timeline: 'Jan 2019 - Mar 2019',
-        associatedWith: 'Birla Vishvakarma Mahavidyalaya',
-        impact:
-            'Implemented fingerprint-based attendance with Raspberry Pi, OpenCV/TensorFlow pipelines, and database-backed workflows.',
-        skills: ['OpenCV', 'TensorFlow', 'Raspberry Pi', 'MySQL', 'Android', 'Java'],
-    },
-    {
-        title: 'Face Detection and Recognition',
-        timeline: 'May 2018 - Aug 2018',
-        associatedWith: 'Birla Vishvakarma Mahavidyalaya',
-        impact:
-            'Built face-recognition attendance automation with dlib/OpenCV/FaceNet and React-based admin tooling.',
-        skills: ['dlib', 'OpenCV', 'TensorFlow', 'React', 'JavaScript', 'MySQL'],
-    },
+];
+
+const EARLIER_WORK: string[] = [
+    'Online Agriculture Trading (2020)',
+    'Stock Market Simulation (2019)',
+    'Fingerprint Recognition (2019)',
+    'Face Detection and Recognition (2018)',
 ];
 
 const Projects: React.FC = () => {
     return (
-        <div className="projects-list">
-            {PROJECTS.map((project: Project) => (
-                <article key={project.title} className="project-card">
-                    <div className="project-header">
-                        <h3 className="project-title">
-                            {project.link ? (
-                                <a className="project-title-link" href={project.link} target="_blank" rel="noopener noreferrer">
-                                    {project.title}
-                                    <ExternalLink size={14} aria-hidden="true" />
-                                </a>
-                            ) : (
-                                project.title
-                            )}
-                        </h3>
-                        <span className="project-timeline">{project.timeline}</span>
-                    </div>
-                    <p className="project-associated">{project.associatedWith}</p>
-                    <p className="project-description">{project.impact}</p>
-                    <div className="project-tech-list">
-                        {project.skills.map((skill: string) => (
-                            <span key={skill} className="project-tech-pill">{skill}</span>
-                        ))}
-                    </div>
-                </article>
-            ))}
-        </div>
+        <>
+            <div className="projects-list">
+                {PROJECTS.map((project: Project) => (
+                    <article
+                        key={project.title}
+                        className={`project-card${project.featured ? ' project-card-featured' : ''}`}
+                    >
+                        {project.featured && (
+                            <span className="project-featured-badge">
+                                <Sparkles size={12} aria-hidden="true" /> Featured
+                            </span>
+                        )}
+                        <div className="project-header">
+                            <h3 className="project-title">
+                                {project.link ? (
+                                    <a className="project-title-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                                        {project.title}
+                                        <ExternalLink size={14} aria-hidden="true" />
+                                    </a>
+                                ) : (
+                                    project.title
+                                )}
+                            </h3>
+                            <span className="project-timeline">{project.timeline}</span>
+                        </div>
+                        <p className="project-associated">{project.associatedWith}</p>
+                        <p className="project-description">{project.impact}</p>
+                        <div className="project-tech-line">
+                            <Code2 size={13} aria-hidden="true" className="project-tech-icon" />
+                            <span className="project-tech-text">{project.skills.join(' · ')}</span>
+                        </div>
+                    </article>
+                ))}
+            </div>
+            <div className="projects-earlier">
+                <span className="projects-earlier-label">Earlier work:</span>
+                <span className="projects-earlier-list">{EARLIER_WORK.join(' · ')}</span>
+            </div>
+        </>
     );
 };
 
