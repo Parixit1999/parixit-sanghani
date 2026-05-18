@@ -10,8 +10,8 @@ const Summary: React.FC = () => {
                 Amazon Robotics.
             </p>
             <p className="summary-copy secondary">
-                My core strengths are distributed systems design, cloud automation, and delivering production-ready
-                platforms that are reliable, measurable, and easy for teams to operate.
+                I care about distributed systems design, cloud automation, and shipping production-ready platforms
+                that are reliable, measurable, and easy for teams to operate.
             </p>
         </div>
     );
