@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                     <p className="header-role">Software Engineer · Distributed Systems · AI Platforms</p>
                     <h1 className="header-name">Parixit Sanghani</h1>
                     <p className="header-tagline">
-                        AI Developer at MSMM Engineering. Previously Lead Founding Engineer at Nebula-NLU and Software Developer Engineer at Amazon Robotics.
+                        AI Developer at MSMM Engineering, building AI systems for engineering workflows. Previously founding engineer at Nebula-NLU and SDE at Amazon Robotics.
                     </p>
                     <div className='header-contact'>
                         <span className="header-pill"><MapPin size={14} aria-hidden="true" /> Boston, MA</span>
