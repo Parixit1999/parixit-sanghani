@@ -1,53 +1,52 @@
 # Parixit Sanghani Portfolio
 
-This repository contains information about Parixit Sanghani.
-It is a React + TypeScript portfolio codebase that presents profile details, experience, skills, and projects.
-
-## Codebase Overview
-
-The app includes:
-- Header and top-level layout
-- Professional summary
-- Work experience
-- Technical skills
-- Education
-- Interests
-- Projects
+Source for [parixitsanghani.com](https://parixitsanghani.com): a single-page portfolio with a space-themed background and an animated illustration for each role.
 
 ## Tech Stack
 
-- React
+- [Next.js](https://nextjs.org) (App Router, static export)
 - TypeScript
-- CSS
-- Create React App (`react-scripts`)
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [Motion](https://motion.dev) for scroll and illustration animations
+- [lucide-react](https://lucide.dev) icons
 
 ## Project Structure
 
 ```text
 src/
-  components/
-    header/
-    profile/
-    summary/
-    experience/
-    technicalSkills/
-    education/
-    interests/
-    projects/
-  static/
+  app/                  layout (metadata, fonts, JSON-LD), page, global styles
+  components/           page sections, starfield, nav, footer
+    illustrations/      animated SVG illustration per company
+  data/profile.ts       all site content: experience, projects, skills, education
+  lib/motion.ts         shared animation variants
+public/                 favicons, CNAME, robots.txt, sitemap.xml, manifest
 ```
+
+To update content, edit `src/data/profile.ts`. Components read everything from there.
 
 ## Local Development
 
-1. Install dependencies: `npm install`
-2. Start development server: `npm start`
-3. Open `http://localhost:3000`
+```bash
+npm install
+npm run dev
+```
 
-## Useful Scripts
+Then open `http://localhost:3000`.
 
-- `npm start` - Run the app locally
-- `npm test` - Run tests
-- `npm run build` - Build for production
+## Scripts
+
+- `npm run dev`: start the dev server
+- `npm run build`: build the static site into `out/`
+- `npm start`: serve the built `out/` folder locally
+- `npm run lint`: run ESLint
+
+## Deployment
+
+Pushing to `main` runs `.github/workflows/deploy-pages.yml`, which builds the static export and publishes `out/` to GitHub Pages. The custom domain is set by `public/CNAME`.
+
+## Accessibility
+
+All motion respects the `prefers-reduced-motion` setting: illustrations render in their final state, and the starfield and looping effects stop.
 
 ## License
 

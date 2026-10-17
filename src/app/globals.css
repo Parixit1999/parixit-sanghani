@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space: #030617;
+  --color-ink: #e5e9f5;
+  --color-ink-strong: #ffffff;
+  --color-muted: #9aa5c8;
+  --color-dim: #7480a3;
+  --color-accent: #8b7ff8;
+  --color-panel: rgb(10 14 34 / 0.62);
+  --color-line: rgb(255 255 255 / 0.08);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  background: var(--color-space);
+  overflow-x: clip;
+}
+
+/* Transparent so the fixed nebula and starfield layers (negative z-index) show through. */
+body {
+  background: transparent;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(139 127 248 / 0.3);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- background ---------- */
+.nebula-bg {
+  position: fixed;
+  inset: -10% 0;
+  z-index: -3;
+  will-change: transform;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgb(100 80 220 / 0.28) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 10%, rgb(220 80 160 / 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 55%, rgb(80 180 220 / 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 85%, rgb(120 80 220 / 0.14) 0%, transparent 40%),
+    linear-gradient(180deg, #030617 0%, #050a24 50%, #030617 100%);
+}
+
+/* ---------- hero decoration ---------- */
+.hero-halo {
+  animation: breathe 8s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { opacity: 0.75; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
+.photo-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, transparent 0deg, rgb(139 127 248 / 0.9) 60deg, transparent 120deg, transparent 360deg);
+  -webkit-mask: radial-gradient(circle, transparent calc(50% - 2px), #000 calc(50% - 1px));
+  mask: radial-gradient(circle, transparent calc(50% - 2px), #000 calc(50% - 1px));
+  animation: orbit 6s linear infinite;
+}
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 3px;
+  height: 7px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.6);
+  animation: cue 1.8s ease-in-out infinite;
+}
+@keyframes cue {
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(12px); }
+}
+.live-dot {
+  animation: live 2s infinite;
+}
+@keyframes live {
+  0% { box-shadow: 0 0 0 0 rgb(52 211 153 / 0.55); }
+  70% { box-shadow: 0 0 0 7px rgb(52 211 153 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(52 211 153 / 0); }
+}
+
+/* ---------- cards ---------- */
+.spotlight {
+  position: relative;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+  transition: opacity 0.35s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--glow, rgb(139 127 248 / 0.12)), transparent 45%);
+}
+.spotlight:hover::after {
+  opacity: 1;
+}
+.chapter:hover {
+  border-color: var(--edge, rgb(255 255 255 / 0.18));
+}
+
+.theme-msmm { --glow: rgb(74 158 255 / 0.13); --edge: rgb(74 158 255 / 0.4); }
+.theme-nebula { --glow: rgb(232 121 249 / 0.12); --edge: rgb(232 121 249 / 0.35); }
+.theme-amazon { --glow: rgb(255 153 0 / 0.12); --edge: rgb(255 153 0 / 0.35); }
+.theme-crest { --glow: rgb(94 234 212 / 0.12); --edge: rgb(94 234 212 / 0.35); }
+
+.visual-msmm {
+  background-color: #061328;
+  background-image:
+    linear-gradient(rgb(74 158 255 / 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(74 158 255 / 0.2) 1px, transparent 1px),
+    linear-gradient(rgb(74 158 255 / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(74 158 255 / 0.09) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+}
+.visual-nebula {
+  background-color: #0a0518;
+  background-image:
+    radial-gradient(ellipse at 55% 50%, rgb(139 92 246 / 0.32), transparent 60%),
+    radial-gradient(ellipse at 25% 30%, rgb(236 72 153 / 0.2), transparent 50%),
+    radial-gradient(1px 1px at 30px 40px, rgb(255 255 255 / 0.7), transparent),
+    radial-gradient(1px 1px at 90px 15px, rgb(255 255 255 / 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 60px 100px, rgb(255 255 255 / 0.6), transparent);
+  background-size: 100% 100%, 100% 100%, 120px 120px, 120px 120px, 140px 140px;
+}
+.visual-amazon {
+  background-color: #120a00;
+  background-image:
+    radial-gradient(rgb(255 153 0 / 0.35) 1px, transparent 1.6px),
+    linear-gradient(rgb(255 153 0 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 153 0 / 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 15px 15px, 0 0, 0 0;
+}
+.visual-crest {
+  background-color: #031210;
+  background-image: radial-gradient(rgb(94 234 212 / 0.18) 1px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.illus {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .illus {
+    position: sticky;
+    top: 76px;
+    max-width: none;
+  }
+}
+
+/* ---------- project visuals ---------- */
+.flow-line {
+  background: linear-gradient(90deg, rgb(94 234 212 / 0.2), rgb(94 234 212 / 0.9), rgb(94 234 212 / 0.2));
+  background-size: 200% 100%;
+  animation: flow 1.6s linear infinite;
+}
+@keyframes flow {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+.led-blink {
+  animation: blink 2.2s steps(2) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-halo,
+  .photo-orbit::before,
+  .scroll-cue::after,
+  .live-dot,
+  .flow-line,
+  .led-blink {
+    animation: none;
+  }
+}
