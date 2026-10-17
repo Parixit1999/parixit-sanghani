@@ -9,23 +9,27 @@ type SkillGroup = {
 const SKILL_GROUPS: SkillGroup[] = [
     {
         category: 'Languages',
-        skills: ['Python', 'Java', 'Kotlin', 'TypeScript', 'Go', 'Rust', 'C++', 'Shell Scripting', 'SQL'],
+        skills: ['Python', 'Java', 'Kotlin', 'TypeScript', 'Go', 'Rust', 'C++', 'Shell Scripting', 'PL/SQL', 'Linux'],
     },
     {
-        category: 'Backend and APIs',
-        skills: ['Spring Boot', 'FastAPI', 'Node.js', 'Django', 'Flask', 'GraphQL', 'gRPC', 'REST'],
+        category: 'AI and LLM',
+        skills: ['AWS Bedrock', 'Vertex AI', 'RAG', 'Vector Search', 'Semantic Search', 'PyTorch', 'MLOps', 'OCR'],
+    },
+    {
+        category: 'Backend and Frameworks',
+        skills: ['Spring Boot', 'FastAPI', 'Node.js', 'Django', 'Flask', 'Vue.js', 'React.js', 'NGINX', 'gRPC', 'REST'],
     },
     {
         category: 'Data and Platforms',
-        skills: ['Kafka', 'Redis', 'MySQL', 'PostgreSQL', 'DynamoDB', 'MongoDB', 'Oracle DB'],
+        skills: ['Kafka', 'Redis', 'PostgreSQL', 'AlloyDB', 'MySQL', 'DynamoDB', 'MongoDB', 'Oracle DB', 'MS SQL Server'],
     },
     {
         category: 'Cloud and DevOps',
-        skills: ['AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CloudFormation', 'CI/CD', 'Jenkins'],
+        skills: ['AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CloudFormation', 'Jenkins', 'CI/CD'],
     },
     {
         category: 'Engineering Practices',
-        skills: ['Distributed Systems', 'MLOps', 'Pipeline Automation', 'Microservices', 'Code Review', 'Debugging'],
+        skills: ['Distributed Systems', 'Microservices', 'Pipeline Automation', 'OOP', 'Code Review', 'SDLC', 'Debugging'],
     },
 ];
 

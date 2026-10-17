@@ -6,8 +6,8 @@ const Summary: React.FC = () => {
         <div className="profile-summary">
             <p className="summary-copy">
                 Software Engineer focused on building scalable backend and data-intensive systems for AI-driven products.
-                I currently lead engineering at Nebula-NLU and previously built MLOps and robotics infrastructure at
-                Amazon Robotics.
+                I currently build AI developer tooling at MSMM Engineering, previously led engineering at Nebula-NLU
+                and built MLOps and robotics infrastructure at Amazon Robotics.
             </p>
             <p className="summary-copy secondary">
                 I care about distributed systems design, cloud automation, and shipping production-ready platforms
