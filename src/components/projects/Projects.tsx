@@ -14,11 +14,11 @@ type Project = {
 
 const PROJECTS: Project[] = [
     {
-        title: 'BlueprintAI',
+        title: 'AI Knowledge Base for Engineering Documents',
         timeline: '2026',
         associatedWith: 'MSMM Engineering',
         impact:
-            'AI-powered knowledge base that lets municipal engineers query millions of design blueprints in natural language. Built on AWS Bedrock with Python and TypeScript; now in production for the City of New Orleans and the Sewerage & Water Board.',
+            'AI-powered knowledge base that lets engineers query millions of complex design documents in natural language, surfacing flaws and improvement opportunities in seconds instead of hours. Built on AWS Bedrock with Python and TypeScript; now in production with municipal clients.',
         skills: ['AWS Bedrock', 'Python', 'TypeScript', 'RAG', 'Vector Search'],
         featured: true,
     },

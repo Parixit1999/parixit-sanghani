@@ -5,10 +5,10 @@ const Summary: React.FC = () => {
     return (
         <div className="profile-summary">
             <p className="summary-copy">
-                Software engineer building data-intensive backend systems for AI products. Currently shipping
-                BlueprintAI at MSMM Engineering — an AWS Bedrock platform that lets municipal engineers query
-                millions of design blueprints in natural language. Previously founding engineer at Nebula-NLU
-                (semantic search for legal discovery) and SDE at Amazon Robotics (MLOps for warehouse robots).
+                Software engineer building data-intensive backend systems for AI products. Currently at MSMM
+                Engineering, building AWS Bedrock–powered systems that make complex engineering documents
+                searchable in natural language. Previously founding engineer at Nebula-NLU (semantic search
+                for legal discovery) and SDE at Amazon Robotics (MLOps for warehouse robots).
             </p>
             <p className="summary-copy secondary">
                 I care about distributed systems design, cloud automation, and shipping platforms that are
