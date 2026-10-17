@@ -38,15 +38,19 @@ export function Hero() {
         style={{ background: "radial-gradient(circle, rgb(139 127 248 / 0.28) 0%, transparent 65%)" }}
       />
 
-      <motion.div data-reveal variants={item} className="photo-orbit relative mb-8 h-[132px] w-[132px]">
-        <Image
-          src={profile}
-          alt={site.name}
-          width={132}
-          height={132}
-          priority
-          className="h-full w-full rounded-full border border-white/15 object-cover shadow-[0_0_60px_rgb(139_127_248/0.45)]"
-        />
+      <motion.div data-reveal variants={item} className="relative mb-10 h-[132px] w-[132px]">
+        <span aria-hidden="true" className="photo-orbit" />
+        {/* The source photo has transparent corners, so it sits on a solid backing and is cropped slightly in. */}
+        <div className="h-full w-full overflow-hidden rounded-full border border-white/15 bg-[#0b0f24] shadow-[0_0_60px_rgb(139_127_248/0.4)]">
+          <Image
+            src={profile}
+            alt={site.name}
+            width={132}
+            height={132}
+            priority
+            className="h-full w-full scale-[1.12] object-cover object-[50%_35%]"
+          />
+        </div>
       </motion.div>
 
       <motion.h1

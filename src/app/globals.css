@@ -65,15 +65,26 @@ body {
   0%, 100% { opacity: 0.75; transform: translate(-50%, -50%) scale(1); }
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
+/* Faint orbit line with a small satellite circling the photo. */
+.photo-orbit {
+  position: absolute;
+  inset: -14px;
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  pointer-events: none;
+  animation: orbit 12s linear infinite;
+}
 .photo-orbit::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  top: -3.5px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
   border-radius: 9999px;
-  background: conic-gradient(from 0deg, transparent 0deg, rgb(139 127 248 / 0.9) 60deg, transparent 120deg, transparent 360deg);
-  -webkit-mask: radial-gradient(circle, transparent calc(50% - 2px), #000 calc(50% - 1px));
-  mask: radial-gradient(circle, transparent calc(50% - 2px), #000 calc(50% - 1px));
-  animation: orbit 6s linear infinite;
+  background: #e0dcff;
+  box-shadow: 0 0 10px 2px rgb(139 127 248 / 0.85);
 }
 @keyframes orbit {
   to { transform: rotate(360deg); }
@@ -201,7 +212,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-halo,
-  .photo-orbit::before,
+  .photo-orbit,
   .scroll-cue::after,
   .live-dot,
   .flow-line,

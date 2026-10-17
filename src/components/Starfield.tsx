@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 type Layer = { depth: number; size: number; speed: number };
 type Star = { x: number; y: number; layer: Layer; r: number; phase: number; twinkle: number; tint: string };
-type Meteor = { x: number; y: number; vx: number; vy: number; life: number };
+type Meteor = { x: number; y: number; vx: number; vy: number; life: number; maxLife: number; tail: number; width: number };
 
 const LAYERS: Layer[] = [
   { depth: 0.2, size: 0.8, speed: 0.015 },
@@ -26,8 +26,24 @@ export function Starfield() {
     let width = 0;
     let height = 0;
     let stars: Star[] = [];
-    let meteor: Meteor | null = null;
-    let nextMeteor = performance.now() + 4000;
+    let meteors: Meteor[] = [];
+    let nextMeteor = performance.now() + 2500;
+
+    // Random start point, direction, speed, and trail length for each shooting star.
+    const spawnMeteor = (): Meteor => {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 5 + Math.random() * 6;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 0,
+        maxLife: 40 + Math.random() * 40,
+        tail: 10 + Math.random() * 10,
+        width: 0.8 + Math.random(),
+      };
+    };
     let raf = 0;
 
     const resize = () => {
@@ -75,37 +91,30 @@ export function Starfield() {
       }
 
       if (reduce) return;
-      if (!meteor && t > nextMeteor) {
-        meteor = {
-          x: width * (0.25 + Math.random() * 0.7),
-          y: height * Math.random() * 0.35,
-          vx: -(6 + Math.random() * 3),
-          vy: 2.5 + Math.random() * 1.5,
-          life: 0,
-        };
+      if (t > nextMeteor) {
+        meteors.push(spawnMeteor());
+        if (Math.random() < 0.25) meteors.push(spawnMeteor());
+        nextMeteor = t + 2500 + Math.random() * 6000;
       }
-      if (meteor) {
-        const m = meteor;
+      for (const m of meteors) {
         m.life += 1;
         m.x += m.vx;
         m.y += m.vy;
-        const fadeOut = Math.max(0, 1 - m.life / 60);
-        const tailX = m.x - m.vx * 14;
-        const tailY = m.y - m.vy * 14;
+        const alpha = Math.min(1, m.life / 8) * Math.max(0, 1 - m.life / m.maxLife);
+        const tailX = m.x - m.vx * m.tail;
+        const tailY = m.y - m.vy * m.tail;
         const grad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
-        grad.addColorStop(0, `rgba(255,255,255,${0.9 * fadeOut})`);
+        grad.addColorStop(0, `rgba(255,255,255,${0.9 * alpha})`);
         grad.addColorStop(1, "rgba(255,255,255,0)");
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.4;
+        ctx.lineWidth = m.width;
+        ctx.lineCap = "round";
         ctx.beginPath();
         ctx.moveTo(m.x, m.y);
         ctx.lineTo(tailX, tailY);
         ctx.stroke();
-        if (m.life > 60) {
-          meteor = null;
-          nextMeteor = t + 7000 + Math.random() * 8000;
-        }
       }
+      meteors = meteors.filter((m) => m.life < m.maxLife);
     };
 
     const loop = (t: number) => {
