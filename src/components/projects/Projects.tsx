@@ -18,7 +18,7 @@ const PROJECTS: Project[] = [
         timeline: '2026',
         associatedWith: 'MSMM Engineering',
         impact:
-            'Built end-to-end with AWS Bedrock, Python, and TypeScript — turning engineering design blueprints into a queryable AI knowledge base for the City of New Orleans and the Sewerage & Water Board. Engineers can query millions of design documents in natural language to surface flaws and improvement opportunities.',
+            'AI-powered knowledge base that lets municipal engineers query millions of design blueprints in natural language. Built on AWS Bedrock with Python and TypeScript; now in production for the City of New Orleans and the Sewerage & Water Board.',
         skills: ['AWS Bedrock', 'Python', 'TypeScript', 'RAG', 'Vector Search'],
         featured: true,
     },
@@ -27,7 +27,7 @@ const PROJECTS: Project[] = [
         timeline: '2025',
         associatedWith: 'Independent Project',
         impact:
-            'Designed an end-to-end OCR + GenAI pipeline to parse unstructured PDFs, normalize extracted insights into SQL records, and deliver real-time data to frontend applications through robust API integrations.',
+            'OCR + GenAI pipeline that parses unstructured PDFs, normalizes extracted insights into SQL records, and streams real-time data to frontend applications via REST APIs.',
         skills: ['OCR', 'GenAI', 'Python', 'SQL', 'REST API'],
         featured: true,
     },
@@ -36,7 +36,7 @@ const PROJECTS: Project[] = [
         timeline: '2024',
         associatedWith: 'Independent Project',
         impact:
-            'Implemented Python microservices backed by Kafka to reliably stream and visualize Kubernetes pod metrics, significantly improving observability and end-to-end ML pipeline traceability.',
+            'Python microservices backed by Kafka that stream and visualize Kubernetes pod metrics, giving ML pipelines end-to-end observability and traceability.',
         skills: ['Python', 'Kafka', 'Kubernetes', 'Microservices', 'Observability'],
     },
     {
