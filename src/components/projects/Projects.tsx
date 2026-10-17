@@ -14,6 +14,15 @@ type Project = {
 
 const PROJECTS: Project[] = [
     {
+        title: 'BlueprintAI',
+        timeline: '2026',
+        associatedWith: 'MSMM Engineering',
+        impact:
+            'Built end-to-end with AWS Bedrock, Python, and TypeScript — turning engineering design blueprints into a queryable AI knowledge base for the City of New Orleans and the Sewerage & Water Board. Engineers can query millions of design documents in natural language to surface flaws and improvement opportunities.',
+        skills: ['AWS Bedrock', 'Python', 'TypeScript', 'RAG', 'Vector Search'],
+        featured: true,
+    },
+    {
         title: 'Intelligent Document Extraction',
         timeline: '2025',
         associatedWith: 'Independent Project',
@@ -29,7 +38,6 @@ const PROJECTS: Project[] = [
         impact:
             'Implemented Python microservices backed by Kafka to reliably stream and visualize Kubernetes pod metrics, significantly improving observability and end-to-end ML pipeline traceability.',
         skills: ['Python', 'Kafka', 'Kubernetes', 'Microservices', 'Observability'],
-        featured: true,
     },
     {
         title: 'Image Similarity using Neural Network',
