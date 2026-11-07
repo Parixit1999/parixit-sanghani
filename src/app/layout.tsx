@@ -9,7 +9,7 @@ const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subset
 
 const title = "Parixit Sanghani | Software Engineer";
 const description =
-  "Parixit Sanghani is a software engineer in Boston building data-intensive backend systems, distributed systems, and AI platforms. AI Developer at MSMM Engineering, previously Nebula-NLU and Amazon Robotics.";
+  "Parixit Sanghani is a software engineer in New Orleans building data-intensive backend systems, distributed systems, and AI platforms. AI Developer at MSMM Engineering, previously Nebula-NLU and Amazon Robotics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "distributed systems engineer",
     "MLOps engineer",
     "AI platform engineer",
-    "Boston software engineer",
+    "New Orleans software engineer",
     "AWS Bedrock",
     "RAG",
     "Python",
@@ -76,7 +76,7 @@ const jsonLd = {
   jobTitle: "AI Developer",
   worksFor: { "@type": "Organization", name: "MSMM Engineering" },
   email: `mailto:${site.email}`,
-  address: { "@type": "PostalAddress", addressLocality: "Boston", addressRegion: "MA", addressCountry: "US" },
+  address: { "@type": "PostalAddress", addressLocality: "New Orleans", addressRegion: "LA", addressCountry: "US" },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "Rochester Institute of Technology" },
     { "@type": "CollegeOrUniversity", name: "Birla Vishvakarma Mahavidyalya" },
