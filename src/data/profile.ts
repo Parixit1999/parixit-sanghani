@@ -3,9 +3,9 @@ export const site = {
   url: "https://parixitsanghani.com",
   roleLine: "Software Engineer / Distributed Systems / AI Platforms",
   tagline:
-    "AI Developer at MSMM Engineering, building AI systems for engineering workflows. Previously founding engineer at Nebula-NLU and SDE at Amazon Robotics.",
+    "AI Developer at MSMM Engineering, building tools for engineers and the U.S. Army. Previously founding engineer at Nebula-NLU and SDE at Amazon Robotics.",
   email: "ps9903@g.rit.edu",
-  location: "Boston, MA",
+  location: "New Orleans, LA",
   links: {
     linkedin: "https://www.linkedin.com/in/parixit-sanghani/",
     github: "https://github.com/Parixit1999",
@@ -14,7 +14,7 @@ export const site = {
 } as const;
 
 export const about = [
-  "Software engineer building data-intensive backend systems for AI products. Currently at MSMM Engineering, building AWS Bedrock-powered systems that make complex engineering documents searchable in natural language. Previously founding engineer at Nebula-NLU (semantic search for legal discovery) and SDE at Amazon Robotics (MLOps for warehouse robots).",
+  "Software engineer building data-intensive backend systems for AI products. Currently at MSMM Engineering, building tools for engineers and the U.S. Army and integrating AI products into the systems they already use. Previously founding engineer at Nebula-NLU (semantic search for legal discovery) and SDE at Amazon Robotics (MLOps for warehouse robots).",
   "I care about distributed systems design, cloud automation, and shipping platforms that are reliable, measurable, and easy for teams to operate.",
 ];
 
